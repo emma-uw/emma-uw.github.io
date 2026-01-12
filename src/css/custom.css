@@ -125,6 +125,12 @@ h1 {
   transition: all 0.2s ease !important;
 }
 
+@media screen and (max-width: 996px) {
+  .aa-DetachedSearchButton {
+    min-width: 150px !important;
+  }
+}
+
 .aa-DetachedSearchButton:hover {
   background-color: #e9ecef !important;
   border-color: #adb5bd !important;

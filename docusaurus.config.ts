@@ -31,16 +31,15 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: ({docPath}) => {
+            if (docPath.startsWith('examples/')) {
+              const notebookPath = docPath.replace('.mdx', '.ipynb').replace('docs/', '');
+              return `https://github.com/emma-uw/emma-uw.github.io/edit/main/${notebookPath}`;
+            }
+            
+            return `https://github.com/emma-uw/emma-uw.github.io/edit/main/docs/${docPath}`;
+          },
           docItemComponent: "@theme/ApiItem",
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          onInlineAuthors: "ignore",
-          onUntruncatedBlogPosts: "ignore",
         },
         theme: {
           customCss: [
