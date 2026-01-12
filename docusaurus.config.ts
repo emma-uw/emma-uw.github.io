@@ -9,8 +9,10 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 const config: Config = {
   title: "ALGOPACK",
   tagline: "ALGOPACK",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://emma-uw.github.io",
   baseUrl: "/",
+  organizationName: "emma-uw", 
+  projectName: "moexalgo-doc",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
@@ -19,9 +21,7 @@ const config: Config = {
     defaultLocale: "ru",
     locales: ["ru"],
   },
-
-  organizationName: "moexalgo", 
-  projectName: "moexalgo",
+  
   stylesheets: [
     "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/css/all.min.css",
   ],
