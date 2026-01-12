@@ -10,7 +10,7 @@ const config: Config = {
   title: "ALGOPACK",
   tagline: "ALGOPACK",
   url: "https://emma-uw.github.io",
-  baseUrl: "/",
+  baseUrl: "/moexalgo-doc/",
   organizationName: "emma-uw", 
   projectName: "moexalgo-doc",
   onBrokenLinks: "warn",
