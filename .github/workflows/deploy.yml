@@ -28,25 +28,14 @@ jobs:
           node-version: 20
           cache: npm
       
-      - name: Detect changes in examples folder
-        uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            examples:
-              - 'examples/**'
-      
       - name: Set up Quarto
-        if: steps.filter.outputs.examples == 'true'
         uses: quarto-dev/quarto-actions/setup@v2
       
       - name: Install Quarto colab extension
-        if: steps.filter.outputs.examples == 'true'
         run: quarto add coatless-quarto/colab --no-prompt
         working-directory: examples
       
       - name: Render Quarto examples
-        if: steps.filter.outputs.examples == 'true'
         run: quarto render
         working-directory: examples
       

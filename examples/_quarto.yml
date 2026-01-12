@@ -9,5 +9,5 @@ format:
   docusaurus-md:
     colab:
       gh-user: "emma-uw"
-      gh-repo: "moexalgo-doc"  
-      gh-branch: "main"  
+      gh-repo: "emma-uw.github.io"  
+      gh-branch: "main" 
