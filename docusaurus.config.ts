@@ -36,7 +36,6 @@ const config: Config = {
               const notebookPath = docPath.replace('.mdx', '.ipynb').replace('docs/', '');
               return `https://github.com/emma-uw/emma-uw.github.io/edit/main/${notebookPath}`;
             }
-            
             return `https://github.com/emma-uw/emma-uw.github.io/edit/main/docs/${docPath}`;
           },
           docItemComponent: "@theme/ApiItem",
