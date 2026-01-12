@@ -1,0 +1,175 @@
+---
+custom_edit_url: null
+---
+import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+
+# Welcome to ALGOPACK
+Самый богатый набор исторических данных Московской Биржи через API
+
+<Tabs>
+<TabItem value="python" label="Python">
+  ```python
+  import requests
+
+  url = "https://apim.moex.com/iss/datashop/algopack/eq/obstats.json?date=2024-10-15"
+
+  headers = {
+    'Authorization': 'Bearer <APIKEY>',
+  }
+
+  response = requests.request("GET", url, headers=headers)
+
+  print(response.text)
+  ```
+</TabItem>
+<TabItem value="moexalgo" label="moexAlgo lib">
+  ```python
+  from moexalgo import session, Market
+  session.TOKEN = '<APIKEY>'
+
+  eq = Market('EQ')
+  eq.obstats(date='2024-10-15')
+  ```
+</TabItem>
+<TabItem value="curl" label="cURL">
+  ```bash
+  curl -L -X GET "https://apim.moex.com/iss/datashop/algopack/eq/obstats.json?date=2024-10-15" \
+  -H 'Authorization: Bearer <APIKEY>'
+  ```
+</TabItem>
+<TabItem value="javascript" label="JavaScript">
+  ```javascript
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer <APIKEY>");
+
+  var formdata = new FormData();
+
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    body: formdata,
+    redirect: 'follow'
+  };
+
+  fetch("https://apim.moex.com/iss/datashop/algopack/eq/obstats.json?date=2024-10-15", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+  ```
+</TabItem>
+<TabItem value="shell" label="SHELL">
+  ```bash
+  wget --no-check-certificate --quiet \
+    --method GET \
+    --timeout=0 \
+    --header 'Authorization: Bearer <APIKEY>' \
+    'https://apim.moex.com/iss/datashop/algopack/eq/obstats.json?date=2024-10-15'
+  ```
+</TabItem>
+</Tabs>
+
+## Состав данных
+
+<table>
+  <tr>
+    <th></th>
+	<th></th>
+    <th>Обновление</th>
+    <th>История</th>
+    <th>Python lib</th>
+  </tr>
+  <tr>
+    <td>
+      <span><b><a href="modules/realtime">Real-time market data</a></b></span><br/>
+      Свечи, стаканы и сделки
+    </td>
+    <td>
+      акции<br/>
+	  фьючерсы
+    </td>
+    <td>10 сек</td>
+    <td>-</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>
+      <span><b><a href="modules/supercandles">Super Candles</a></b></span><br/>
+      50+ фич на потоке сделок, заявок и стакана котировок
+    </td>
+	<td>
+      акции<br/>
+	  фьючерсы<br/>
+	  валюта
+    </td>
+    <td>5 мин</td>
+    <td>c 2020 года</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>
+      <span><b><a href="modules/futoi">Futures Open Interest (FUTOI)</a></b></span><br/>
+      Открытые позиции по фьючерсным контрактам в разрезе физ. и юр. лиц
+    </td>
+	<td>
+      фьючерсы
+    </td>
+    <td>5 мин</td>
+    <td>c 2020 года</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>
+      <span><b><a href="modules/hi2">Market Concentration (HI2)</a></b></span><br/>
+      Индекс рыночной концентрации
+    </td>
+	<td>
+      акции<br/>
+	  фьючерсы<br/>
+	  валюта
+    </td>
+    <td>Ежедневно, 19:00</td>
+    <td>c 2020 года</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>
+      <span><b><a href="modules/megaalerts">Mega Alerts</a></b></span><br/>
+      Сигналы о существенных отклонениях (аномалиях)
+    </td>
+	<td>
+      акции<br/>
+	  фьючерсы<br/>
+	  валюта
+    </td>
+    <td>1 мин</td>
+    <td>c 2024 года</td>
+    <td>-</td>
+  </tr>
+
+  <!-- More rows follow -->
+</table>
+
+
+
+
+## С ALGOPACK вы сможете:
+* Загружать исторические данные для тестирования торговых стратегий
+* Получать online данные для алгоритмической торговли
+
+:::note
+Через ALGOPACK нельзя отправлять заявки на биржу. Заявки отправляются через торговый API вашего брокера
+:::
+
+
+## Начать пользоваться
+
+Оформите подписку на сайте data.moex.com
+
+<a class="button button--link button--lg" href="https://data.moex.com/products/algopack">
+  <i class="fas fa-sign-in-alt"></i> Оформить подписку
+</a>
+и ALGOPACK готов к использованию:
+
+* [Начать пользоваться](/docs/api/algopack-api)
+* [Методы API](/docs/api)
