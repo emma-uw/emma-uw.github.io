@@ -19,6 +19,17 @@ jobs:
           node-version: 20
           cache: npm
       
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
+      - name: Install Quarto colab extension
+        run: quarto add coatless-quarto/colab --no-prompt
+        working-directory: examples
+      
+      - name: Render Quarto examples
+        run: quarto render
+        working-directory: examples
+      
       - name: Install dependencies
         run: npm ci
       

@@ -8,6 +8,6 @@ extensions:
 format:
   docusaurus-md:
     colab:
-      gh-user: "moexalgo"
-      gh-repo: "moexalgo"  
+      gh-user: "emma-uw"
+      gh-repo: "moexalgo-doc"  
       gh-branch: "main"  
