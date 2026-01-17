@@ -106,6 +106,20 @@ h1 {
   background-color: var(--openapi-code-orange);
 }
 
+/* Reduce font size for dataframe tables */
+.dataframe {
+  font-size: 0.85rem;
+  table-layout: auto;  /* Allow columns to auto-fit content */
+  max-width: 100%;
+}
+
+/* Make table more compact */
+.dataframe td, .dataframe th {
+  padding: 0.25rem;
+  white-space: nowrap;
+  width: auto;  /* Let width adjust to content */
+}
+
 .navbarSearchContainer_Bca1 .aa-Input {
   width: 300px !important;
   min-height: 40px !important;
