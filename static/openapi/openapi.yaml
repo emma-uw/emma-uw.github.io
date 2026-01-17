@@ -5,7 +5,6 @@ info:
   version: 1.0.0
 servers:
   - url: https://apim.moex.com
-  - url: https://iss.moex.com
 
 tags:
   - name: Real-time market data - Акции
